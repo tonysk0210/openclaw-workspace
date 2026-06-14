@@ -1,0 +1,106 @@
+[
+  {
+    "date": "2026-06-03",
+    "num": 1,
+    "title": "科技教育工程師",
+    "company": "旗標科技股份有限公司",
+    "url": "https://www.104.com.tw/job/5iq8o",
+    "status": "already_applied"
+  },
+  {
+    "date": "2026-06-03",
+    "num": 3,
+    "title": "Java工程師",
+    "company": "昇智科技有限公司",
+    "url": "https://www.104.com.tw/job/8wfs1",
+    "status": "already_applied"
+  },
+  {
+    "date": "2026-06-03",
+    "num": 3,
+    "title": "Java工程師",
+    "company": "昇智科技有限公司",
+    "url": "https://www.104.com.tw/job/8wfs1",
+    "status": "success",
+    "btnText": "應徵",
+    "modalResult": "redirected:https://www.104.com.tw/job/8wfs1?apply=form"
+  },
+  {
+    "date": "2026-06-03",
+    "num": 4,
+    "title": "Backend Engineer 後端工程師 (Java)",
+    "company": "陽信電子商務股份有限公司",
+    "url": "https://www.104.com.tw/job/7id4u",
+    "status": "success",
+    "btnText": "",
+    "submitResult": "submitted:確認送出"
+  },
+  {
+    "date": "2026-06-03",
+    "num": 5,
+    "title": "Java工程師",
+    "company": "Ragic_立即科技有限公司",
+    "url": "https://www.104.com.tw/job/4iq1g",
+    "status": "success",
+    "btnText": "",
+    "submitResult": "submitted:確認送出"
+  },
+  {
+    "date": "2026-06-03",
+    "num": 7,
+    "title": "系開_JAVA工程師",
+    "company": "遠雄人壽保險事業股份有限公司(總公司)",
+    "url": "https://www.104.com.tw/job/6opti",
+    "status": "success",
+    "btnText": "",
+    "submitResult": "submitted:確認送出"
+  },
+  {
+    "date": "2026-06-03",
+    "num": 1,
+    "title": "資深程式開發人員",
+    "company": "第一銀行_第一商業銀行股份有限公司",
+    "url": "https://www.104.com.tw/job/7pge2",
+    "status": "success",
+    "btnText": "",
+    "submitResult": "submitted:確認送出"
+  },
+  {
+    "date": "2026-06-03",
+    "num": 2,
+    "title": "【內湖】Linux Platform Performance & Power Software Application Engineer (3088623)",
+    "company": "Qualcomm Semiconductor Corporation_高通半導體有限公司",
+    "url": "https://www.104.com.tw/job/90nys",
+    "status": "success",
+    "btnText": "",
+    "submitResult": "submitted:確認送出"
+  },
+  {
+    "date": "2026-06-03",
+    "num": 1,
+    "title": "【高雄】Android/iOS SDK APP開發工程師",
+    "company": "兆葳科技股份有限公司",
+    "url": "https://www.104.com.tw/job/7defm",
+    "status": "success",
+    "btnText": "",
+    "submitResult": "submitted:確認送出"
+  },
+  {
+    "date": "2026-06-03",
+    "num": 1,
+    "title": "【高雄】Android/iOS SDK APP開發工程師",
+    "company": "兆葳科技股份有限公司",
+    "url": "https://www.104.com.tw/job/7defm",
+    "status": "already_applied"
+  },
+  {
+    "date": "2026-06-03",
+    "num": 1,
+    "title": "軟體工程師(歡迎資工、數學系)",
+    "company": "文為建築科技有限公司",
+    "url": "https://www.104.com.tw/job/6uy61",
+    "status": "success",
+    "btnText": "",
+    "submitResult": "submitted:確認送出"
+  }
+]

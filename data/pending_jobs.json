@@ -1,0 +1,109 @@
+{
+  "date": "2026-06-04",
+  "keyword": "Java",
+  "total_fetched": 22,
+  "skipped_applied": 5,
+  "csv": "/Users/anthonyshangkuan/Desktop/06-04/104_Java_符合度高_2026-06-04.csv",
+  "jobs": [
+    {
+      "num": 1,
+      "title": "軟體工程師(歡迎資工、數學系)",
+      "company": "文為建築科技有限公司",
+      "salary": "月薪36,000~42,000元",
+      "location": "高雄市三民區",
+      "url": "https://www.104.com.tw/job/6uy61",
+      "content": "1. 以團隊方式撰寫網路 BIM 建築程式。應用 OOPS 撰寫前後端大型程式。 2. 撰寫 BIM 建築程式，擷取2D圖或讓使用者依2D圖建模，生成大樓3D模型並做估算。 3. 撰寫 AI 建築程式，讓設計者輸入建築面積之寬深與樓層數，程式自動產生大樓建築物。 請參考官網: https://www.buildrome.com 公司地址: 高雄市三民區昌裕街71巷15弄5號1樓 面試地址: 同上",
+      "req": "工作經歷: 不拘 | 學歷要求: 大學 | 科系要求: 應用數學相關、一般數學相關、資訊工程相關 | 擅長工具: 系統架構規劃、軟體程式設計"
+    },
+    {
+      "num": 2,
+      "title": "Java系統開發人員",
+      "company": "凱基人壽保險股份有限公司(總公司)",
+      "salary": "待遇面議",
+      "location": "台北市松山區",
+      "url": "https://www.104.com.tw/job/8pj7l",
+      "content": "1.維護和優化現有的系統。 2.負責後端Java開發工作，優化系統功能。 3.與前端工程師溝通合作，提供後端API。",
+      "req": "工作經歷: 1年以上 | 學歷要求: 大學、碩士 | 其他條件: 1.年以上獨立後端Java程式開發經驗。 2.瞭解Spring、Springboot、MyBatics框架知識與運作原理。 3.具有Spring Cloud 開發、使用經驗為佳。 4.具保險等相關金融業工作經驗尤佳"
+    },
+    {
+      "num": 3,
+      "title": "JAVA軟體工程師",
+      "company": "松凌科技股份有限公司",
+      "salary": "月薪45,000~60,000元",
+      "location": "台北市中正區",
+      "url": "https://www.104.com.tw/job/2q8mo",
+      "content": "Java WebApp 程式設計、專案開發為主要工作內容 工作內容 1.Java Web相關程式設計與開發。 2.關聯式資料庫系統應用開發。 3.資訊系統開發。 4.B2B/B2C EC平台開發 5.軟體測試與維護。 徵求條件 1.具備Team work團隊開發合作能力 2.需要會 Java 語言, 需要會Spring Boot框架 3.工作經驗不拘 加分條件(非必備): 1.具產壽險之保險相關知識者佳 2.熟悉Vue.js、React、Angular任一前端框架 3.孰悉Docker、Kubernetes任一容器平台 擅長工具 WebApp開發軟體(如Eclipse、Intellij IDEA、VS Code等) Office辦公軟體(Excel、Word、PowerPoint) 資料庫連線與操作 工作技能 開發環境準備、安裝 Java、Web程式開發、測試、維護 SQL DB 操作 專案執行狀況總結、報告 證照(非必要) OCPJP/OCPAD",
+      "req": "工作經歷: 不拘 | 學歷要求: 專科以上 | 科系要求: 資訊工程相關、資訊管理相關、銀行保險相關 | 其他條件: 其他條件 孰悉 Java 語言，並且擁有開發程式的熱忱，工作態度良好，認真負責，科系不拘，上過Java軟體工程師訓練課程亦歡迎面試。"
+    },
+    {
+      "num": 4,
+      "title": "Java助理工程師",
+      "company": "銘威國際企業股份有限公司",
+      "salary": "月薪32,000~40,000元",
+      "location": "新北市中和區",
+      "url": "https://www.104.com.tw/job/75flc",
+      "content": "本公司主要客戶為金融業，為金融業提供應用系統開發維運解決方案，主要的領域有Bank3.0、大數據資料建置分析及報表系統等。 職缺主要工作項目為: 1.Java 程式碼撰寫基礎能力，能夠靈活思考，對於邏輯理解能力佳 2.從事相關系統測試，系統功能開發，功能需求異動 3.專案支援，系統版面調整，系統資料彙整，執行專案文書撰寫 4.需能夠條理分明、細心、耐心、邏輯清晰 5.勇於挑戰，對資訊系統開發具有高度熱忱 6.駐點開發、測試 【※歡迎緯育TibaMe學員投遞履歷】",
+      "req": "工作經歷: 不拘 | 學歷要求: 專科、大學、碩士 | 科系要求: 數學及電算機科學學科類、資訊管理相關 | 擅長工具: 資料庫程式設計、模組化系統設計、網路程式設計、軟體程式設計、資訊設備操作檢修、作業系統基本操作"
+    },
+    {
+      "num": 5,
+      "title": "產品工程師 (Java)",
+      "company": "亞勤科技股份有限公司",
+      "salary": "待遇面議",
+      "location": "台北市南港區",
+      "url": "https://www.104.com.tw/job/3o5qv",
+      "content": "1. 以Java 為主要開發語言 2. 設計、開發金融市場資訊管理平台 3. 設計、開發金融交易系統",
+      "req": "工作經歷: 3年以上 | 學歷要求: 大學以上 | 科系要求: 資訊工程相關、其他數學及電算機科學相關、資訊管理相關 | 其他條件: 熟悉金融市場資訊 熟悉金融市場交易 熟悉 Java 開發及MVC架構 熟悉資料庫 有流程管理開發經驗"
+    },
+    {
+      "num": 6,
+      "title": "【資訊科技】Java工程師",
+      "company": "遠東國際商業銀行股份有限公司",
+      "salary": "待遇面議",
+      "location": "新北市板橋區",
+      "url": "https://www.104.com.tw/job/7q883",
+      "content": "JAVA",
+      "req": "工作經歷: 3年以上 | 學歷要求: 大學、碩士 | 科系要求: 資訊管理相關 | 其他條件: "
+    },
+    {
+      "num": 7,
+      "title": "JAVA程式工程師（保障年薪14個月）",
+      "company": "易界面科技有限公司",
+      "salary": "月薪35,000~50,000元",
+      "location": "台北市大安區",
+      "url": "https://www.104.com.tw/job/88wts",
+      "content": "1. 負責Java程式相關功能的開發。 2. 負責軟體之測試與修改。 3. 負責程式上版、相關專案文件撰寫。 4. 負責系統健康狀況的監控。",
+      "req": "工作經歷: 不拘 | 學歷要求: 大學、碩士 | 擅長工具: 軟體工程系統開發、軟體程式設計、資料庫程式設計 | 其他條件: 1，熟練掌握Java程式語言基礎知識。 2，工作態度勤奮、認真。 3，自學能力佳，願意接受新事物。 4，具備一定表達能力。"
+    },
+    {
+      "num": 8,
+      "title": "Java 工程師",
+      "company": "主向位科技股份有限公司",
+      "salary": "月薪35,000~65,000元",
+      "location": "台北市內湖區",
+      "url": "https://www.104.com.tw/job/22fct",
+      "content": "1.負責Java程式開發. 2.研發光纖/通訊相關產品SNMP/EMS/NMS網管程式",
+      "req": "工作經歷: 不拘 | 學歷要求: 大學、碩士 | 科系要求: 電機電子工程相關、光電工程相關、資訊工程相關 | 擅長工具: 軟體程式設計、網路程式設計 | 其他條件: 1.熟Java, Swing, SQL設計經驗者。 2.具SNMP/EMS/NMS網管程式開發經驗者佳"
+    },
+    {
+      "num": 9,
+      "title": "Java 軟體工程師",
+      "company": "德義資訊股份有限公司",
+      "salary": "待遇面議",
+      "location": "台北市內湖區",
+      "url": "https://www.104.com.tw/job/3qmdf",
+      "content": "1. 熟 Java SE/ Java EE 程式設計與開發 2. 熟 Java、JSP、Servlets 3. 熟 OOAD, UML 4. WebSphere／WebLogic／JBoss Application Server 5. Spring, Hibernate, JQuery 等 Frameworks",
+      "req": "工作經歷: 1年以上 | 學歷要求: 專科以上 | 擅長工具: 軟體程式設計、網路程式設計 | 其他條件: Struts Spring Hibernate JQuery ireport"
+    },
+    {
+      "num": 10,
+      "title": "Java 軟體工程師(信義)",
+      "company": "皇霖實業股份有限公司",
+      "salary": "待遇面議",
+      "location": "台北市信義區",
+      "url": "https://www.104.com.tw/job/91n4d",
+      "content": "\"後端Java：年資：3年以上 開發業務員、保戶的使用平台 • 精通 Java 8 / 11 / 17 開發，具備 Spring 系列框架實作經驗（Spring Boot 為核心）。 • 系統架構串接及需求討論 • 資料庫：Mongo DB • Docker 容器化相關經驗 • 具備 CI/CD 流程優化 或自定義腳本撰寫經驗者。 • 有 BFF (Back-end for Front-end) 或是 API Gateway 開發經驗者。",
+      "req": "工作經歷: 3年以上 | 學歷要求: 專科、大學、碩士 | 擅長工具: 軟體程式設計、系統架構規劃 | 其他條件: 需直接對接下遊（前端 APP/Web）提供 API，同時需主動與上游（各核心系統、核心科）對接規格。 在 SA 資源有限的情況下，具備獨立釐清模糊需求、主動找窗口討論並拆解 Task 的能力（PG 具備 SD/SA 潛力）。\""
+    }
+  ]
+}

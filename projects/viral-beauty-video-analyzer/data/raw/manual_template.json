@@ -1,0 +1,42 @@
+[
+  {
+    "platform": "tiktok",
+    "video_id": "填入視頻ID",
+    "url": "https://www.tiktok.com/@username/video/...",
+    "title": "視頻標題 / 文案",
+    "description": "視頻描述",
+    "creator": "創作者帳號",
+    "views": 1000000,
+    "likes": 50000,
+    "comments": 3000,
+    "shares": 10000,
+    "hashtags": ["#美女", "#shorts", "#fyp"],
+    "music": "使用的音樂名稱",
+    "duration_sec": 30,
+    "scene_description": "場景描述：室內/戶外，環境，燈光",
+    "outfit": "服裝描述",
+    "actions": "動作描述：跳舞/換裝/日常/vlog",
+    "thumbnail_url": "封面圖片URL（可選）",
+    "notes": "自己的備注"
+  },
+  {
+    "platform": "instagram",
+    "video_id": "",
+    "url": "https://www.instagram.com/reel/...",
+    "title": "",
+    "description": "",
+    "creator": "",
+    "views": 0,
+    "likes": 0,
+    "comments": 0,
+    "shares": 0,
+    "hashtags": [],
+    "music": "",
+    "duration_sec": 0,
+    "scene_description": "",
+    "outfit": "",
+    "actions": "",
+    "thumbnail_url": "",
+    "notes": ""
+  }
+]

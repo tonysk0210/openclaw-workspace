@@ -1,0 +1,41 @@
+{
+  "youtube": {
+    "api_key": "AIzaSyA1di9ioTP9sePmAd5z2Kf-PbcayK1rrsw",
+    "queries": [
+      "beautiful asian girl lifestyle shorts",
+      "asian girl ootd fashion shorts",
+      "girl morning routine aesthetic shorts",
+      "asian girl dance shorts beautiful",
+      "asian beauty vlog shorts",
+      "girl outfit of the day shorts fashion"
+    ],
+    "default_query": "beautiful asian girl lifestyle shorts",
+    "region_code": "TW",
+    "max_results": 30,
+    "order": "viewCount",
+    "exclude_keywords": [
+      "minecraft", "animation", "game", "gaming", "anime", "cartoon",
+      "广场舞", "toddler", "baby", "kid", "child", "school",
+      "funny", "comedy", "prank", "challenge vs", "team vs",
+      "tutorial diy", "cooking", "recipe", "food", "dog", "cat", "pet",
+      "security", "busted", "teacher", "nastya", "학교", "선생"
+    ],
+    "require_any_keywords": [
+      "girl", "beauty", "beautiful", "aesthetic", "ootd", "outfit",
+      "fashion", "vlog", "routine", "makeup", "lifestyle", "dance",
+      "美女", "穿搭", "日常", "妝容", "時尚"
+    ]
+  },
+  "analysis": {
+    "min_views": 100000,
+    "min_likes": 5000,
+    "language": "zh-TW",
+    "categories": ["beauty", "lifestyle", "dance", "fashion", "daily"]
+  },
+  "prompt_generation": {
+    "style": "detailed",
+    "include_hashtags": true,
+    "include_music_suggestion": true,
+    "output_language": "zh-TW"
+  }
+}
