@@ -5,8 +5,8 @@ import { writeFileSync, existsSync, readFileSync, mkdirSync } from 'fs';
 
 const CDP_URL = 'http://127.0.0.1:18800';
 const WS_PATH = '/Users/anthonyshangkuan/.nvm/versions/node/v24.13.1/lib/node_modules/openclaw/node_modules/ws/index.js';
-const PENDING_FILE = '/Users/anthonyshangkuan/.openclaw/workspace/data/pending_jobs.json';
-const LOG_FILE = '/Users/anthonyshangkuan/.openclaw/workspace/data/apply_log.json';
+const PENDING_FILE = '/Users/anthonyshangkuan/.openclaw/workspace/projects/104-apply-semi/data/pending_jobs.json';
+const LOG_FILE = '/Users/anthonyshangkuan/.openclaw/workspace/projects/104-apply-semi/data/apply_log.json';
 
 const KEYWORD = process.argv[2] || 'Java';
 const COUNT = parseInt(process.argv[3]) || 10;
