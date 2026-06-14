@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>☕ 早安 Tony — 求職晨報</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d2e;
+    --card: #252838;
+    --border: #2e3250;
+    --accent: #6c8ef5;
+    --accent2: #52d9a4;
+    --accent3: #f5a623;
+    --accent4: #f06292;
+    --text: #e8eaf6;
+    --muted: #7986cb;
+    --success: #52d9a4;
+    --warning: #f5a623;
+    --danger: #f06292;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang TC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 24px 16px 60px;
+  }
+
+  /* Header */
+  .header {
+    max-width: 900px;
+    margin: 0 auto 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .header-icon { font-size: 2.5rem; }
+  .header-title { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.5px; }
+  .header-sub { font-size: 0.9rem; color: var(--muted); margin-top: 4px; }
+  .header-date {
+    margin-left: auto;
+    text-align: right;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .header-date .day { font-size: 1.5rem; font-weight: 700; color: var(--text); }
+
+  /* Grid layout */
+  .grid { max-width: 900px; margin: 0 auto; display: grid; gap: 20px; }
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  @media (max-width: 640px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  }
+
+  /* Stat cards */
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .stat-icon { font-size: 2rem; }
+  .stat-value { font-size: 2rem; font-weight: 800; line-height: 1; }
+  .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+  .stat-card.accent-blue  { border-color: rgba(108, 142, 245, 0.4); }
+  .stat-card.accent-green { border-color: rgba(82, 217, 164, 0.4); }
+  .stat-card.accent-gold  { border-color: rgba(245, 166, 35, 0.4); }
+  .stat-card.accent-pink  { border-color: rgba(240, 98, 146, 0.4); }
+
+  /* Section */
+  .section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .section-header {
+    padding: 18px 22px 14px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title { font-size: 1rem; font-weight: 700; }
+  .section-badge {
+    margin-left: auto;
+    background: var(--border);
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  /* Job card */
+  .job-list { padding: 12px 16px; display: flex; flex-direction: column; gap: 10px; }
+  .job-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    transition: border-color 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+  }
+  .job-card:hover { border-color: var(--accent); }
+  .job-card-top { display: flex; align-items: flex-start; gap: 12px; }
+  .job-num {
+    width: 26px; height: 26px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .job-title { font-weight: 600; font-size: 0.95rem; line-height: 1.3; }
+  .job-company { font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
+  .job-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .tag {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  .tag.salary { color: var(--success); border-color: rgba(82, 217, 164, 0.3); background: rgba(82, 217, 164, 0.08); }
+  .tag.location { color: var(--accent); border-color: rgba(108, 142, 245, 0.3); background: rgba(108, 142, 245, 0.08); }
+  .tag.exp { color: var(--warning); border-color: rgba(245, 166, 35, 0.3); background: rgba(245, 166, 35, 0.08); }
+
+  /* Applied log */
+  .applied-list { padding: 12px 16px; }
+  .applied-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .applied-item:last-child { border-bottom: none; }
+  .applied-status {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .status-success { background: var(--success); box-shadow: 0 0 6px rgba(82, 217, 164, 0.5); }
+  .status-skip { background: var(--border); }
+  .applied-info { flex: 1; min-width: 0; }
+  .applied-title { font-size: 0.87rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .applied-company { font-size: 0.78rem; color: var(--muted); }
+  .applied-date { font-size: 0.75rem; color: var(--muted); flex-shrink: 0; }
+
+  /* Skill tags analysis */
+  .skills-grid { padding: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-tag {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .skill-bar {
+    height: 4px;
+    border-radius: 2px;
+    background: var(--accent);
+    min-width: 20px;
+  }
+
+  /* Salary chart */
+  .salary-chart { padding: 16px; }
+  .salary-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .salary-label { font-size: 0.8rem; color: var(--muted); width: 100px; flex-shrink: 0; text-align: right; }
+  .salary-bar-wrap { flex: 1; background: var(--border); border-radius: 4px; overflow: hidden; height: 20px; }
+  .salary-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    display: flex; align-items: center; padding-left: 8px;
+    font-size: 0.72rem; font-weight: 600; color: #fff;
+    transition: width 0.8s ease;
+  }
+
+  /* Footer */
+  .footer {
+    max-width: 900px;
+    margin: 32px auto 0;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .footer a { color: var(--accent); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  /* Motivational */
+  .motivation {
+    max-width: 900px;
+    margin: 0 auto 24px;
+    background: linear-gradient(135deg, rgba(108,142,245,0.12), rgba(82,217,164,0.08));
+    border: 1px solid rgba(108,142,245,0.3);
+    border-radius: 14px;
+    padding: 18px 22px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .motivation strong { color: var(--accent2); }
+
+  /* Action buttons */
+  .actions { padding: 16px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 0.82rem;
+    color: var(--text);
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn:hover { border-color: var(--accent); background: rgba(108,142,245,0.1); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.primary:hover { background: #7c9cf7; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-icon">☕</div>
+  <div>
+    <div class="header-title">早安，Tony！</div>
+    <div class="header-sub">你的 Java 求職晨報 · 今天也加油 💪</div>
+  </div>
+  <div class="header-date" id="dateDisplay">
+    <div class="day" id="dayNum">–</div>
+    <div id="dateStr">–</div>
+    <div id="timeStr">–</div>
+  </div>
+</div>
+
+<!-- Motivational banner -->
+<div class="motivation" id="motivationBanner">
+  🎯 <strong>投遞進度良好！</strong> 已送出 8 份應徵，還有 6 個職缺待你拍板。凱基人壽、松凌科技、亞勤科技都是今天的潛力清單。挑幾個投出去吧！
+</div>
+
+<!-- Stat cards -->
+<div class="grid grid-3" style="max-width:900px;margin:0 auto 20px;">
+  <div class="stat-card accent-blue">
+    <div class="stat-icon">📤</div>
+    <div>
+      <div class="stat-value" style="color:#6c8ef5">8</div>
+      <div class="stat-label">已成功投遞</div>
+    </div>
+  </div>
+  <div class="stat-card accent-gold">
+    <div class="stat-icon">📋</div>
+    <div>
+      <div class="stat-value" style="color:#f5a623">6</div>
+      <div class="stat-label">待確認職缺</div>
+    </div>
+  </div>
+  <div class="stat-card accent-green">
+    <div class="stat-icon">🏢</div>
+    <div>
+      <div class="stat-value" style="color:#52d9a4">9</div>
+      <div class="stat-label">不同公司</div>
+    </div>
+  </div>
+</div>
+
+<div class="grid" style="max-width:900px;margin:0 auto 20px;">
+
+  <!-- Pending jobs -->
+  <div class="section">
+    <div class="section-header">
+      <span>🔥</span>
+      <span class="section-title">待確認職缺清單</span>
+      <span class="section-badge" style="color:#f5a623">6 個等你決定</span>
+    </div>
+    <div class="job-list" id="pendingList"></div>
+    <div class="actions">
+      <a href="https://www.104.com.tw/jobs/search/?ro=1&kwop=7&keyword=java&order=14&asc=0&page=1&mode=s&jobsource=2018indexpoc" class="btn primary" target="_blank">🔍 前往 104 搜尋</a>
+      <a href="#" class="btn" onclick="copyInstructions(); return false;">📋 複製應徵指令</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid grid-2" style="max-width:900px;margin:0 auto 20px;">
+
+  <!-- Applied log -->
+  <div class="section">
+    <div class="section-header">
+      <span>✅</span>
+      <span class="section-title">已投遞紀錄</span>
+      <span class="section-badge">2026-06-03</span>
+    </div>
+    <div class="applied-list" id="appliedList"></div>
+  </div>
+
+  <!-- Salary analysis -->
+  <div class="section">
+    <div class="section-header">
+      <span>💰</span>
+      <span class="section-title">薪資分布分析</span>
+      <span class="section-badge">待確認職缺</span>
+    </div>
+    <div class="salary-chart">
+      <div class="salary-row">
+        <div class="salary-label">未揭露</div>
+        <div class="salary-bar-wrap"><div class="salary-bar-fill" style="width:50%">3 個</div></div>
+      </div>
+      <div class="salary-row">
+        <div class="salary-label">3～4萬</div>
+        <div class="salary-bar-wrap"><div class="salary-bar-fill" style="width:33%">2 個</div></div>
+      </div>
+      <div class="salary-row">
+        <div class="salary-label">4～6萬</div>
+        <div class="salary-bar-wrap"><div class="salary-bar-fill" style="width:17%">1 個</div></div>
+      </div>
+    </div>
+    <div style="padding: 0 16px 16px; font-size:0.8rem; color:var(--muted)">
+      💡 松凌科技 45K~60K 月薪，是這批薪資最透明且最高的選項。
+    </div>
+  </div>
+
+</div>
+
+<!-- Skills in demand -->
+<div class="grid" style="max-width:900px;margin:0 auto 20px;">
+  <div class="section">
+    <div class="section-header">
+      <span>🛠️</span>
+      <span class="section-title">這批職缺需求技能 TOP</span>
+      <span class="section-badge">從 JD 分析</span>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-tag">☕ Java <div class="skill-bar" style="width:60px"></div></div>
+      <div class="skill-tag">🌱 Spring Boot <div class="skill-bar" style="width:50px"></div></div>
+      <div class="skill-tag">🗄️ SQL/DB <div class="skill-bar" style="width:40px"></div></div>
+      <div class="skill-tag">⚡ Spring <div class="skill-bar" style="width:38px"></div></div>
+      <div class="skill-tag">🐳 Docker <div class="skill-bar" style="width:24px"></div></div>
+      <div class="skill-tag">🔷 MyBatis <div class="skill-bar" style="width:22px"></div></div>
+      <div class="skill-tag">💚 Vue.js <div class="skill-bar" style="width:20px"></div></div>
+      <div class="skill-tag">🔬 JUnit <div class="skill-bar" style="width:18px"></div></div>
+      <div class="skill-tag">☁️ Spring Cloud <div class="skill-bar" style="width:16px"></div></div>
+    </div>
+    <div style="padding: 0 16px 16px; font-size:0.8rem; color:var(--muted)">
+      👉 Spring Boot + MySQL 是最常出現的組合，Docker 加分項開始頻繁出現。
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  ⚡ 由 Clawton 凌晨自動生成 · <span id="genTime">2026-06-15</span><br>
+  資料來源：<code>data/pending_jobs.json</code> · <code>data/apply_log.json</code><br>
+  <a href="https://www.104.com.tw" target="_blank">前往 104 人力銀行</a> ·
+  使用指令 <code>node scripts/search_104_semi.mjs</code> 更新職缺清單
+</div>
+
+<script>
+// ── Data ─────────────────────────────────────────────────────────────────────
+
+const PENDING_JOBS = [
+  { num: 1, title: "軟體工程師(歡迎資工、數學系)", company: "文為建築科技有限公司", salary: "月薪36,000~42,000元", location: "高雄市三民區", url: "https://www.104.com.tw/job/6uy61", exp: "不拘" },
+  { num: 2, title: "Java系統開發人員", company: "凱基人壽保險股份有限公司", salary: "待遇面議", location: "台北市松山區", url: "https://www.104.com.tw/job/8pj7l", exp: "1年以上" },
+  { num: 3, title: "JAVA軟體工程師", company: "松凌科技股份有限公司", salary: "月薪45,000~60,000元", location: "台北市中正區", url: "https://www.104.com.tw/job/2q8mo", exp: "不拘" },
+  { num: 4, title: "Java助理工程師", company: "銘威國際企業股份有限公司", salary: "月薪32,000~40,000元", location: "新北市中和區", url: "https://www.104.com.tw/job/75flc", exp: "不拘" },
+  { num: 5, title: "產品工程師 (Java)", company: "亞勤科技股份有限公司", salary: "待遇面議", location: "台北市南港區", url: "https://www.104.com.tw/job/3o5qv", exp: "3年以上" },
+  { num: 6, title: "【資訊科技】Java工程師", company: "遠東國際商業銀行", salary: "待遇面議", location: "新北市板橋區", url: "https://www.104.com.tw/job/7q883", exp: "3年以上" },
+  { num: 7, title: "JAVA程式工程師（保障年薪14個月）", company: "易界面科技有限公司", salary: "月薪35,000~50,000元", location: "台北市大安區", url: "https://www.104.com.tw/job/88wts", exp: "不拘" },
+  { num: 8, title: "Java 工程師", company: "主向位科技股份有限公司", salary: "月薪35,000~65,000元", location: "台北市內湖區", url: "https://www.104.com.tw/job/22fct", exp: "不拘" },
+  { num: 9, title: "Java 軟體工程師", company: "德義資訊股份有限公司", salary: "待遇面議", location: "台北市內湖區", url: "https://www.104.com.tw/job/3qmdf", exp: "1年以上" },
+  { num: 10, title: "Java 軟體工程師(信義)", company: "皇霖實業股份有限公司", salary: "待遇面議", location: "台北市信義區", url: "https://www.104.com.tw/job/91n4d", exp: "3年以上" },
+];
+
+const APPLIED_LOG = [
+  { title: "科技教育工程師", company: "旗標科技股份有限公司", url: "https://www.104.com.tw/job/5iq8o", status: "already_applied" },
+  { title: "Java工程師", company: "昇智科技有限公司", url: "https://www.104.com.tw/job/8wfs1", status: "success" },
+  { title: "Backend Engineer 後端工程師 (Java)", company: "陽信電子商務股份有限公司", url: "https://www.104.com.tw/job/7id4u", status: "success" },
+  { title: "Java工程師", company: "Ragic 立即科技有限公司", url: "https://www.104.com.tw/job/4iq1g", status: "success" },
+  { title: "系開_JAVA工程師", company: "遠雄人壽保險事業股份有限公司", url: "https://www.104.com.tw/job/6opti", status: "success" },
+  { title: "資深程式開發人員", company: "第一銀行", url: "https://www.104.com.tw/job/7pge2", status: "success" },
+  { title: "Linux Platform Performance Engineer", company: "Qualcomm Semiconductor", url: "https://www.104.com.tw/job/90nys", status: "success" },
+  { title: "Android/iOS SDK APP開發工程師", company: "兆葳科技股份有限公司", url: "https://www.104.com.tw/job/7defm", status: "success" },
+  { title: "軟體工程師(歡迎資工、數學系)", company: "文為建築科技有限公司", url: "https://www.104.com.tw/job/6uy61", status: "success" },
+];
+
+// ── Render ────────────────────────────────────────────────────────────────────
+
+function renderPending() {
+  const container = document.getElementById('pendingList');
+  // Show first 6 (the actual pending ones from pending_jobs.json)
+  const shown = PENDING_JOBS.slice(1, 7);
+  container.innerHTML = shown.map(j => `
+    <a class="job-card" href="${j.url}" target="_blank">
+      <div class="job-card-top">
+        <div class="job-num">${j.num}</div>
+        <div>
+          <div class="job-title">${j.title}</div>
+          <div class="job-company">${j.company}</div>
+        </div>
+      </div>
+      <div class="job-meta">
+        <span class="tag salary">💰 ${j.salary}</span>
+        <span class="tag location">📍 ${j.location}</span>
+        <span class="tag exp">👔 ${j.exp}</span>
+      </div>
+    </a>
+  `).join('');
+}
+
+function renderApplied() {
+  const container = document.getElementById('appliedList');
+  container.innerHTML = APPLIED_LOG.map(j => `
+    <div class="applied-item">
+      <div class="applied-status ${j.status === 'success' ? 'status-success' : 'status-skip'}"></div>
+      <div class="applied-info">
+        <div class="applied-title">${j.title}</div>
+        <div class="applied-company">${j.company}</div>
+      </div>
+      <div class="applied-date">${j.status === 'success' ? '✅' : '⏭️'}</div>
+    </div>
+  `).join('');
+}
+
+function updateClock() {
+  const now = new Date();
+  const weekdays = ['週日','週一','週二','週三','週四','週五','週六'];
+  const months = ['一','二','三','四','五','六','七','八','九','十','十一','十二'];
+  document.getElementById('dayNum').textContent = now.getDate();
+  document.getElementById('dateStr').textContent = `${now.getFullYear()} 年 ${months[now.getMonth()]} 月 · ${weekdays[now.getDay()]}`;
+  const h = String(now.getHours()).padStart(2,'0');
+  const m = String(now.getMinutes()).padStart(2,'0');
+  document.getElementById('timeStr').textContent = `${h}:${m}`;
+  document.getElementById('genTime').textContent = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+}
+
+function copyInstructions() {
+  const cmd = "# 在 terminal 執行以下指令更新職缺清單：\nnode scripts/search_104_semi.mjs\n\n# 然後回覆 Clawton「投 2 3 5」來應徵指定號碼";
+  navigator.clipboard.writeText(cmd).then(() => {
+    alert('✅ 已複製！貼到 Terminal 執行即可');
+  }).catch(() => {
+    prompt('複製以下指令：', cmd);
+  });
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+renderPending();
+renderApplied();
+updateClock();
+setInterval(updateClock, 30000);
+</script>
+</body>
+</html>
