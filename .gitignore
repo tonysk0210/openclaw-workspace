@@ -1,0 +1,12 @@
+# OpenClaw 圖片快取（私人，不推上 GitHub）
+.openclaw-cli-images/
+
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
